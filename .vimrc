@@ -23,12 +23,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " dlv debugger
 Plug 'Shougo/vimshell.vim'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'sebdah/vim-delve'
 " git integration
 Plug 'airblade/vim-gitgutter'
 Plug 'gregsexton/gitv', {'on': ['Gitv']}
 Plug 'tpope/vim-fugitive'
+" w3m
+Plug 'yuratomo/w3m.vim'
 "go crazy with colorschemes
 Plug 'rafi/awesome-vim-colorschemes'
 call plug#end()
@@ -50,6 +52,7 @@ autocmd FileType go nmap <leader>t  <Plug>(go-test)
 autocmd FileType go nmap <leader>T  :GoCoverage<CR>
 autocmd FileType go nmap <leader>i  <Plug>(go-imports)
 autocmd FileType go nmap <leader>d  <Plug>(go-def-vertical)
+autocmd FileType go nmap <leader>v  :GoMetaLinter<CR>
 " errors
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
